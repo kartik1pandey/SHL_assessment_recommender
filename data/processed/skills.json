@@ -1,0 +1,57 @@
+{
+  "technical_skills": {
+    "programming": [
+      "javascript",
+      "python",
+      "java",
+      "sql",
+      "html_css",
+      "react",
+      "angular",
+      "vue_js"
+    ],
+    "data_analysis": [
+      "sql_querying",
+      "statistical_analysis",
+      "data_visualization",
+      "machine_learning",
+      "excel_advanced"
+    ],
+    "infrastructure": [
+      "cloud_platforms",
+      "docker",
+      "kubernetes",
+      "ci_cd",
+      "version_control"
+    ]
+  },
+  "cognitive_skills": [
+    "problem_solving",
+    "analytical_thinking",
+    "critical_thinking",
+    "logical_reasoning",
+    "pattern_recognition"
+  ],
+  "soft_skills": {
+    "communication": [
+      "verbal_communication",
+      "written_communication",
+      "presentation_skills",
+      "active_listening"
+    ],
+    "interpersonal": [
+      "teamwork",
+      "leadership",
+      "empathy",
+      "relationship_building",
+      "negotiation"
+    ],
+    "work_style": [
+      "time_management",
+      "adaptability",
+      "resilience",
+      "goal_orientation",
+      "attention_to_detail"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "latent_skills": {
+    "C1": {
+      "name": "Numerical Reasoning",
+      "category": "Cognitive",
+      "description": "Ability to interpret and reason with quantitative information, analyze numerical data, and draw logical conclusions from statistical presentations"
+    },
+    "C2": {
+      "name": "Verbal Reasoning",
+      "category": "Cognitive", 
+      "description": "Capacity to understand, analyze, and evaluate written information and arguments to reach sound conclusions"
+    },
+    "C3": {
+      "name": "Abstract Reasoning",
+      "category": "Cognitive",
+      "description": "Ability to identify patterns, logical rules, and relationships in complex, non-verbal information"
+    },
+    "C4": {
+      "name": "Working Memory",
+      "category": "Cognitive",
+      "description": "Capacity to hold and manipulate information in mind while performing complex cognitive tasks"
+    },
+    "C5": {
+      "name": "Processing Speed",
+      "category": "Cognitive",
+      "description": "Speed and accuracy of cognitive processing, particularly under time pressure"
+    },
+    "B1": {
+      "name": "Conscientiousness",
+      "category": "Behavioral",
+      "description": "Reliability, organization, self-discipline, and attention to responsibilities and details"
+    },
+    "B2": {
+      "name": "Emotional Stability",
+      "category": "Behavioral",
+      "description": "Ability to remain calm, composed, and resilient under pressure and in challenging situations"
+    },
+    "B3": {
+      "name": "Extraversion",
+      "category": "Behavioral",
+      "description": "Tendency to be outgoing, assertive, and energized by social interaction and external stimulation"
+    },
+    "B4": {
+      "name": "Agreeableness",
+      "category": "Behavioral",
+      "description": "Propensity to be cooperative, trusting, and considerate in interpersonal relationships"
+    },
+    "B5": {
+      "name": "Openness to Experience",
+      "category": "Behavioral",
+      "description": "Willingness to engage with novel ideas, experiences, and unconventional approaches"
+    },
+    "W1": {
+      "name": "Achievement Orientation",
+      "category": "Work-style",
+      "description": "Drive to excel, set challenging goals, and persist in the face of obstacles to achieve success"
+    },
+    "W2": {
+      "name": "Attention to Detail",
+      "category": "Work-style",
+      "description": "Tendency to be thorough, precise, and careful in work tasks, noticing and correcting errors"
+    },
+    "W3": {
+      "name": "Adaptability",
+      "category": "Work-style",
+      "description": "Flexibility and comfort with change, ambiguity, and shifting priorities in work environments"
+    },
+    "W4": {
+      "name": "Team Collaboration",
+      "category": "Work-style",
+      "description": "Ability to work effectively with others, share information, and contribute to group objectives"
+    },
+    "W5": {
+      "name": "Decision Making",
+      "category": "Work-style",
+      "description": "Capacity to analyze information, weigh alternatives, and make sound judgments in work contexts"
+    }
+  },
+  "skill_categories": {
+    "Cognitive": ["C1", "C2", "C3", "C4", "C5"],
+    "Behavioral": ["B1", "B2", "B3", "B4", "B5"],
+    "Work-style": ["W1", "W2", "W3", "W4", "W5"]
+  },
+  "measurement_considerations": {
+    "cognitive_skills": {
+      "measurement_approach": "Performance-based tests with objective scoring",
+      "typical_reliability": [0.80, 0.95],
+      "adverse_impact_risk": "High - cognitive tests often show group differences"
+    },
+    "behavioral_skills": {
+      "measurement_approach": "Self-report questionnaires and situational judgment",
+      "typical_reliability": [0.70, 0.90],
+      "adverse_impact_risk": "Low to moderate - personality measures generally show smaller group differences"
+    },
+    "work_style_skills": {
+      "measurement_approach": "Behavioral indicators and situational scenarios",
+      "typical_reliability": [0.75, 0.88],
+      "adverse_impact_risk": "Low to moderate - context-specific behavioral measures"
+    }
+  }
+}

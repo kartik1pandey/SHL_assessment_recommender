@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+*.bat
+*.md
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+*.tmp
+temp/
+
+# Test outputs
+test_results/
+
+# Exclude redundant documentation
+DEMO_COMPLETE.md
+DEMO_LIVE.md
+DEMO_READY.md
+FINAL_STATUS.md
+NEXT_STEPS.md
+
+# Exclude old deployment guides (keep only essential ones)
+DEPLOYMENT_GUIDE.md
+
+# Experiments and notebooks (if large)
+experiments/*.ipynb
+experiments/*.html
+
+# Large data files (keep only essential catalog)
+data/raw/
+data/interim/
+
+# Test files (keep only essential)
+test_*.py
+validate_*.py
+phase*_validation.py

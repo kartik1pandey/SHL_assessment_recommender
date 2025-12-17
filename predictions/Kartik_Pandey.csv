@@ -1,0 +1,11 @@
+id,job_description,predicted_assessment,predicted_battery,confidence_score,fairness_risk,duration_minutes
+1,Software Engineer with strong analytical and problem-solving skills. Must be proficient in algorithms and data structures.,SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10
+2,Sales Manager responsible for leading a team. Requires excellent communication and leadership abilities.,SHL_DETAIL_01,Attention to Detail Screener,1.03,0.0,8
+3,Data Analyst with strong quantitative skills. Must be detail-oriented and proficient in statistical analysis.,SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10
+4,Customer Service Representative. Needs strong interpersonal skills and ability to handle stress.,SHL_DETAIL_01,Attention to Detail Screener,1.03,0.0,8
+5,Project Manager with organizational skills. Must be able to coordinate multiple tasks and lead teams.,SHL_DETAIL_01,Attention to Detail Screener,1.03,0.0,8
+6,Marketing Specialist with creative thinking. Requires strong communication and analytical skills.,SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10
+7,Financial Analyst with strong numerical reasoning. Must be detail-oriented and analytical.,SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10
+8,"HR Manager with people skills. Requires empathy, communication, and organizational abilities.",SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10
+9,Operations Manager with process optimization skills. Needs analytical thinking and leadership.,SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10
+10,UX Designer with creative and technical skills. Must understand user needs and design principles.,SHL_OPQ_02,Occupational Personality Questionnaire - Emotional Stability,1.025,0.0,10

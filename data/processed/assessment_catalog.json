@@ -1,0 +1,303 @@
+{
+  "assessments": [
+    {
+      "assessment_id": "SHL_NUM_01",
+      "name": "Numerical Reasoning Test",
+      "assessment_type": "cognitive",
+      "measured_constructs": {
+        "C1": 0.85,
+        "C4": 0.45,
+        "W5": 0.35
+      },
+      "reliability": 0.88,
+      "measurement_noise": 0.12,
+      "duration_minutes": 20,
+      "adverse_impact_risk": 0.35,
+      "description": "Evaluates ability to work with numerical data, interpret charts and graphs, and make quantitative decisions",
+      "provider": "SHL",
+      "cost_per_administration": 25.00
+    },
+    {
+      "assessment_id": "SHL_VER_01", 
+      "name": "Verbal Reasoning Test",
+      "assessment_type": "cognitive",
+      "measured_constructs": {
+        "C2": 0.82,
+        "C4": 0.40,
+        "W5": 0.30
+      },
+      "reliability": 0.85,
+      "measurement_noise": 0.15,
+      "duration_minutes": 18,
+      "adverse_impact_risk": 0.28,
+      "description": "Assesses comprehension of written information and ability to evaluate logical arguments",
+      "provider": "SHL",
+      "cost_per_administration": 25.00
+    },
+    {
+      "assessment_id": "SHL_ABS_01",
+      "name": "Abstract Reasoning Test", 
+      "assessment_type": "cognitive",
+      "measured_constructs": {
+        "C3": 0.90,
+        "C5": 0.55,
+        "W5": 0.25
+      },
+      "reliability": 0.82,
+      "measurement_noise": 0.18,
+      "duration_minutes": 15,
+      "adverse_impact_risk": 0.42,
+      "description": "Measures pattern recognition and logical thinking with non-verbal stimuli",
+      "provider": "SHL",
+      "cost_per_administration": 25.00
+    },
+    {
+      "assessment_id": "SHL_OPQ_01",
+      "name": "Occupational Personality Questionnaire - Conscientiousness",
+      "assessment_type": "personality",
+      "measured_constructs": {
+        "B1": 0.78,
+        "W1": 0.65,
+        "W2": 0.70
+      },
+      "reliability": 0.79,
+      "measurement_noise": 0.21,
+      "duration_minutes": 12,
+      "adverse_impact_risk": 0.08,
+      "description": "Measures reliability, organization, and attention to detail in work contexts",
+      "provider": "SHL",
+      "cost_per_administration": 18.00
+    },
+    {
+      "assessment_id": "SHL_OPQ_02",
+      "name": "Occupational Personality Questionnaire - Emotional Stability",
+      "assessment_type": "personality", 
+      "measured_constructs": {
+        "B2": 0.81,
+        "W3": 0.45,
+        "B1": 0.35
+      },
+      "reliability": 0.76,
+      "measurement_noise": 0.24,
+      "duration_minutes": 10,
+      "adverse_impact_risk": 0.12,
+      "description": "Evaluates resilience, stress tolerance, and emotional regulation under pressure",
+      "provider": "SHL",
+      "cost_per_administration": 18.00
+    },
+    {
+      "assessment_id": "SHL_OPQ_03",
+      "name": "Occupational Personality Questionnaire - Team Orientation",
+      "assessment_type": "personality",
+      "measured_constructs": {
+        "B4": 0.75,
+        "W4": 0.80,
+        "B3": 0.50
+      },
+      "reliability": 0.73,
+      "measurement_noise": 0.27,
+      "duration_minutes": 11,
+      "adverse_impact_risk": 0.06,
+      "description": "Assesses collaboration, interpersonal skills, and team-working preferences",
+      "provider": "SHL",
+      "cost_per_administration": 18.00
+    },
+    {
+      "assessment_id": "SHL_SJT_01",
+      "name": "Management Situational Judgment Test",
+      "assessment_type": "situational_judgment",
+      "measured_constructs": {
+        "W5": 0.72,
+        "W4": 0.60,
+        "B2": 0.45,
+        "W1": 0.40
+      },
+      "reliability": 0.71,
+      "measurement_noise": 0.29,
+      "duration_minutes": 25,
+      "adverse_impact_risk": 0.18,
+      "description": "Presents workplace scenarios requiring judgment about management and leadership decisions",
+      "provider": "SHL",
+      "cost_per_administration": 32.00
+    },
+    {
+      "assessment_id": "SHL_SJT_02", 
+      "name": "Customer Service Situational Judgment Test",
+      "assessment_type": "situational_judgment",
+      "measured_constructs": {
+        "B4": 0.68,
+        "W4": 0.65,
+        "B2": 0.55,
+        "W2": 0.35
+      },
+      "reliability": 0.69,
+      "measurement_noise": 0.31,
+      "duration_minutes": 20,
+      "adverse_impact_risk": 0.14,
+      "description": "Evaluates judgment in customer-facing situations requiring service excellence",
+      "provider": "SHL",
+      "cost_per_administration": 28.00
+    },
+    {
+      "assessment_id": "SHL_CRIT_01",
+      "name": "Critical Thinking Appraisal",
+      "assessment_type": "cognitive",
+      "measured_constructs": {
+        "C2": 0.70,
+        "C1": 0.55,
+        "W5": 0.68,
+        "C4": 0.40
+      },
+      "reliability": 0.84,
+      "measurement_noise": 0.16,
+      "duration_minutes": 30,
+      "adverse_impact_risk": 0.31,
+      "description": "Comprehensive evaluation of critical thinking, analysis, and evaluation skills",
+      "provider": "SHL",
+      "cost_per_administration": 35.00
+    },
+    {
+      "assessment_id": "SHL_WORK_01",
+      "name": "Work Style Inventory - Achievement Focus",
+      "assessment_type": "personality",
+      "measured_constructs": {
+        "W1": 0.83,
+        "B1": 0.60,
+        "W2": 0.45
+      },
+      "reliability": 0.77,
+      "measurement_noise": 0.23,
+      "duration_minutes": 14,
+      "adverse_impact_risk": 0.09,
+      "description": "Measures drive for excellence, goal-setting, and persistence in achieving objectives",
+      "provider": "SHL",
+      "cost_per_administration": 20.00
+    },
+    {
+      "assessment_id": "SHL_ADAPT_01",
+      "name": "Adaptability Assessment",
+      "assessment_type": "situational_judgment",
+      "measured_constructs": {
+        "W3": 0.78,
+        "B5": 0.65,
+        "C5": 0.40,
+        "B2": 0.35
+      },
+      "reliability": 0.72,
+      "measurement_noise": 0.28,
+      "duration_minutes": 22,
+      "adverse_impact_risk": 0.16,
+      "description": "Evaluates flexibility and comfort with change, ambiguity, and new situations",
+      "provider": "SHL",
+      "cost_per_administration": 30.00
+    },
+    {
+      "assessment_id": "SHL_SPEED_01",
+      "name": "Processing Speed Assessment",
+      "assessment_type": "cognitive",
+      "measured_constructs": {
+        "C5": 0.88,
+        "W2": 0.50,
+        "C4": 0.35
+      },
+      "reliability": 0.86,
+      "measurement_noise": 0.14,
+      "duration_minutes": 12,
+      "adverse_impact_risk": 0.38,
+      "description": "Measures speed and accuracy of cognitive processing under time pressure",
+      "provider": "SHL",
+      "cost_per_administration": 22.00
+    },
+    {
+      "assessment_id": "SHL_LEAD_01",
+      "name": "Leadership Potential Indicator",
+      "assessment_type": "situational_judgment",
+      "measured_constructs": {
+        "W5": 0.75,
+        "B3": 0.68,
+        "W1": 0.60,
+        "B2": 0.45,
+        "W4": 0.40
+      },
+      "reliability": 0.74,
+      "measurement_noise": 0.26,
+      "duration_minutes": 35,
+      "adverse_impact_risk": 0.22,
+      "description": "Comprehensive assessment of leadership behaviors, decision-making, and influence",
+      "provider": "SHL",
+      "cost_per_administration": 42.00
+    },
+    {
+      "assessment_id": "SHL_DETAIL_01",
+      "name": "Attention to Detail Screener",
+      "assessment_type": "skills_based",
+      "measured_constructs": {
+        "W2": 0.85,
+        "C5": 0.60,
+        "B1": 0.45
+      },
+      "reliability": 0.81,
+      "measurement_noise": 0.19,
+      "duration_minutes": 8,
+      "adverse_impact_risk": 0.25,
+      "description": "Quick screening for accuracy, thoroughness, and error detection capabilities",
+      "provider": "SHL",
+      "cost_per_administration": 15.00
+    },
+    {
+      "assessment_id": "SHL_INNOV_01",
+      "name": "Innovation and Creativity Assessment",
+      "assessment_type": "situational_judgment",
+      "measured_constructs": {
+        "B5": 0.80,
+        "C3": 0.55,
+        "W3": 0.50,
+        "C2": 0.35
+      },
+      "reliability": 0.70,
+      "measurement_noise": 0.30,
+      "duration_minutes": 28,
+      "adverse_impact_risk": 0.19,
+      "description": "Evaluates creative thinking, innovation, and openness to new approaches",
+      "provider": "SHL",
+      "cost_per_administration": 38.00
+    }
+  ],
+  "metadata": {
+    "total_assessments": 15,
+    "assessment_types": ["cognitive", "personality", "situational_judgment", "skills_based"],
+    "construct_coverage": {
+      "C1": 3,
+      "C2": 4, 
+      "C3": 3,
+      "C4": 4,
+      "C5": 4,
+      "B1": 4,
+      "B2": 5,
+      "B3": 3,
+      "B4": 3,
+      "B5": 3,
+      "W1": 4,
+      "W2": 5,
+      "W3": 3,
+      "W4": 4,
+      "W5": 6
+    },
+    "duration_range": {
+      "min": 8,
+      "max": 35,
+      "average": 19.3
+    },
+    "reliability_range": {
+      "min": 0.69,
+      "max": 0.88,
+      "average": 0.78
+    },
+    "adverse_impact_analysis": {
+      "cognitive_avg": 0.34,
+      "personality_avg": 0.09,
+      "situational_judgment_avg": 0.18,
+      "skills_based_avg": 0.25
+    }
+  }
+}

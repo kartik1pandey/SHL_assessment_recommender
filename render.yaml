@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: assessment-recommender
+    env: python
+    buildCommand: pip install -r requirements-minimal.txt || echo "No dependencies needed"
+    startCommand: cd assessment-recommender && python demo/simple_demo.py
+    envVars:
+      - key: PORT
+        value: 8080
