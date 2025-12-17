@@ -1,3 +1,5 @@
 # Minimal dependencies for deployment
-# Only essential packages needed for RAG system
+# Essential packages needed for RAG system
 numpy>=1.21.0
+pandas>=2.0.0
+openpyxl>=3.1.0
