@@ -33,6 +33,14 @@ except ImportError as e:
     print(f"Warning: Could not import system components: {e}")
     SYSTEM_AVAILABLE = False
 
+# Import RAG components
+try:
+    from rag.rag_engine import RAGEngine
+    RAG_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Could not import RAG components: {e}")
+    RAG_AVAILABLE = False
+
 class DemoHandler(BaseHTTPRequestHandler):
     """HTTP request handler for the demo."""
     
@@ -47,6 +55,8 @@ class DemoHandler(BaseHTTPRequestHandler):
             self.serve_demo_page()
         elif parsed_path.startswith('/api/recommend'):
             self.handle_recommendation_api()
+        elif parsed_path.startswith('/api/rag-recommend'):
+            self.handle_rag_recommendation_api()
         else:
             self.send_error(404)
     
@@ -54,6 +64,8 @@ class DemoHandler(BaseHTTPRequestHandler):
         """Handle POST requests."""
         if self.path == '/api/recommend':
             self.handle_recommendation_api()
+        elif self.path == '/api/rag-recommend':
+            self.handle_rag_recommendation_api()
         else:
             self.send_error(404)
     
@@ -122,10 +134,46 @@ class DemoHandler(BaseHTTPRequestHandler):
         except Exception as e:
             self.send_json_response({"error": str(e)}, 500)
     
+    def handle_rag_recommendation_api(self):
+        """Handle RAG API requests for recommendations."""
+        if not RAG_AVAILABLE:
+            self.send_json_response({"error": "RAG engine not available"}, 503)
+            return
+        
+        try:
+            # Parse request data
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 0:
+                post_data = self.rfile.read(content_length).decode()
+                data = json.loads(post_data)
+            else:
+                # GET request with query parameters
+                query = urlparse(self.path).query
+                params = parse_qs(query)
+                data = {k: v[0] for k, v in params.items()}
+            
+            job_desc = data.get('job_description', data.get('job_desc', ''))
+            fairness_weight = float(data.get('fairness_weight', data.get('fairness', 0.5)))
+            time_weight = float(data.get('time_weight', data.get('time', 0.3)))
+            max_duration = int(data.get('max_duration', data.get('duration', 90)))
+            
+            if not job_desc:
+                self.send_json_response({"error": "Job description required"}, 400)
+                return
+            
+            results = self.run_rag_recommendation(job_desc, fairness_weight, time_weight, max_duration)
+            self.send_json_response(results)
+            
+        except Exception as e:
+            self.send_json_response({"error": str(e)}, 500)
+    
     def send_json_response(self, data, status=200):
         """Send JSON response."""
         self.send_response(status)
         self.send_header('Content-type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         self.end_headers()
         self.wfile.write(json.dumps(data, indent=2).encode())
     
@@ -217,6 +265,49 @@ class DemoHandler(BaseHTTPRequestHandler):
             
         except Exception as e:
             return {"error": f"Recommendation failed: {str(e)}"}
+    
+    def run_rag_recommendation(self, job_description, fairness_weight, time_weight, max_duration):
+        """Run RAG-based recommendation."""
+        try:
+            demo_dir = Path(__file__).parent
+            project_root = demo_dir.parent
+            catalog_path = project_root / "data" / "processed" / "assessment_catalog.json"
+            
+            # Initialize RAG engine
+            rag_engine = RAGEngine(str(catalog_path))
+            
+            # Generate recommendation
+            result = rag_engine.generate_recommendation(
+                query=job_description,
+                preferences={
+                    "fairness_weight": fairness_weight,
+                    "time_weight": time_weight,
+                    "max_duration": max_duration
+                }
+            )
+            
+            # Format response
+            top_rec = result.get("top_recommendation", {})
+            
+            return {
+                "success": True,
+                "query": job_description,
+                "recommendation": {
+                    "assessment_id": top_rec.get("assessment_id", ""),
+                    "name": top_rec.get("name", ""),
+                    "recommendation_score": top_rec.get("recommendation_score", 0.0),
+                    "validity": top_rec.get("validity", 0.0),
+                    "fairness_metrics": top_rec.get("fairness_metrics", {}),
+                    "duration_minutes": top_rec.get("duration_minutes", 0)
+                },
+                "alternatives": result.get("alternatives", [])[:3],
+                "explanation": result.get("explanation", {}),
+                "retrieval_results": result.get("retrieval_results", []),
+                "method": "RAG"
+            }
+            
+        except Exception as e:
+            return {"error": f"RAG recommendation failed: {str(e)}"}
     
     def extract_skills_simple(self, job_description):
         """Simple skill extraction."""
