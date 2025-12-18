@@ -53,16 +53,18 @@ class DemoHandler(BaseHTTPRequestHandler):
             self.serve_main_page()
         elif parsed_path == '/demo':
             self.serve_demo_page()
-        elif parsed_path.startswith('/api/recommend'):
+        elif parsed_path.startswith('/api/recommend') or parsed_path.startswith('/recommend'):
             self.handle_recommendation_api()
         elif parsed_path.startswith('/api/rag-recommend'):
             self.handle_rag_recommendation_api()
+        elif parsed_path == '/health':
+            self.send_json_response({"status": "healthy", "message": "API is running"})
         else:
             self.send_error(404)
     
     def do_POST(self):
         """Handle POST requests."""
-        if self.path == '/api/recommend':
+        if self.path == '/api/recommend' or self.path == '/recommend':
             self.handle_recommendation_api()
         elif self.path == '/api/rag-recommend':
             self.handle_rag_recommendation_api()
@@ -205,7 +207,7 @@ class DemoHandler(BaseHTTPRequestHandler):
             estimator = PerformanceEstimator(job_skills)
             evaluated_batteries = []
             
-            for battery in feasible_batteries[:20]:  # Limit for demo
+            for battery in feasible_batteries[:30]:  # Increased for more recommendations
                 perf_est = estimator.estimate_battery_performance(battery)
                 battery.update(perf_est)
                 
@@ -236,9 +238,27 @@ class DemoHandler(BaseHTTPRequestHandler):
                 top_battery, job_skills, utility_components, ranked[1:4]
             )
             
+            # Format recommendations (minimum 5, maximum 10)
+            all_recommendations = ranked[:10]  # Top 10 recommendations
+            
+            recommendations = []
+            for i, rec in enumerate(all_recommendations):
+                recommendations.append({
+                    "rank": i + 1,
+                    "assessment_name": rec.get("battery_id", f"Assessment_{i+1}"),
+                    "url": f"https://www.shl.com/solutions/products/product-catalog/view/{rec.get('battery_id', '').lower().replace('_', '-')}/",
+                    "performance": rec["expected_performance"],
+                    "fairness_risk": rec["total_fairness_risk"],
+                    "duration": rec["total_duration"],
+                    "utility": rec["total_utility"]
+                })
+            
             return {
                 "success": True,
-                "recommendation": {
+                "query": job_description,
+                "total_recommendations": len(recommendations),
+                "recommendations": recommendations,
+                "top_recommendation": {
                     "battery_id": top_battery["battery_id"],
                     "assessments": top_battery["assessments"],
                     "duration": top_battery["total_duration"],
@@ -251,15 +271,6 @@ class DemoHandler(BaseHTTPRequestHandler):
                     "key_strengths": decision_trace["rationale"]["key_strengths"],
                     "trade_offs": decision_trace["rationale"]["main_trade_offs"]
                 },
-                "alternatives": [
-                    {
-                        "battery_id": alt["battery_id"],
-                        "performance": alt["expected_performance"],
-                        "fairness_risk": alt["total_fairness_risk"],
-                        "duration": alt["total_duration"]
-                    }
-                    for alt in ranked[1:4]
-                ],
                 "job_skills": job_skills
             }
             
